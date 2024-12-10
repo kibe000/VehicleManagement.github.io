@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+
+</head>
+
+<body>
+
+  {% include "vehicle/navbar.html" %}
+  <br><br>
+
+  <center>
+   <div class="container" style="display: flex; justify-content: space-between; padding: 20px;">
+    <!-- Left Side: Form Section -->
+    <div style="width: 60%; background-color: black; padding: 20px; border-radius: 8px;">
+        <h3 class="alert alert-success" style="color: gold; background-color: black;">Send Us Your Valuable Feedback!</h3>
+        
+        <form method="POST">
+            <!-- Very Important csrf Token -->
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <h3 style="color: gold;">{{ form.as_p }}</h3>
+                <br>
+                <input type="submit" value="Send Message" class="btn btn-primary btn-lg" style="background-color: gold; color: black;">
+            </div>
+        </form>
+    </div>
+
+    <!-- Right Side: Contact Info -->
+    <div style="width: 35%; background-color: #0c0a0c; padding: 20px; border-radius: 8px;">
+        <h3 style="color: #57c74f;">Contact Information</h3>
+        <p style="color: #3ecc2e;">P. O Box 20300, Eldoret</p>
+        <p style="color: #57c74f;">Tel No: +254702481929</p>
+        <p style="color: #3ecc2e;">Facebook: <a href="https://facebook.com/knightvehicleservices" style="color: #57c74f;">@knightvehicleservices</a></p>
+        <p style="color: #3ecc2e;">Instagram: <a href="https://instagram.com/Knight_vehicleservices001" style="color: #57c74f;">@Knight_vehicleservices001</a></p>
+    </div>
+</div>
+  </center>
+  <marquee behavior="scroll" direction="left">
+   <img src="{% static "images/ferrari.png" %}" width="120" height="80" alt="ferrari" />
+    <img src="{% static "images/ford.png" %}" width="120" height="80" alt="ford" />
+   <img src="{% static "images/lambo.png" %}" width="120" height="80" alt="lambo" />
+   <img src="{% static "images/mahindra.png" %}" width="120" height="80" alt="mahindra" />
+   <img src="{% static "images/tvs.png" %}" width="120" height="80" alt="tvs" />
+   <img src="{% static "images/tata.png" %}" width="120" height="80" alt="tata" />
+   <img src="{% static "images/hero.png" %}" width="120" height="80" alt="hero" />
+   <img src="{% static "images/rolls.png" %}" width="120" height="80" alt="rolls" />
+   <img src="{% static "images/suzuki.png" %}" width="120" height="80" alt="suzuki" />
+ </marquee>
+  <div class="contact-map" style="background-color: black; padding: 20px; border-radius: 8px;">
+    <h2 style="color: gold;">Find Us Here</h2>
+    <p style="color: gold; background-color: black; padding: 10px;">
+        We are located at Knight Vehicle Service Management, Eldoret, Kenya. Check out our location on the map below!
+    </p>
+    
+    <!-- Google Map Embed Code -->
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.657673710492!2d35.288010310773686!3d0.5141600636893225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1781019057dcb55f%3A0x16beeeee1f8932b0!2sKen-Knit%20(K)%20Ltd.!5e0!3m2!1sen!2ske!4v1733722841433!5m2!1sen!2ske" 
+        width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    
+    
+</div>
+
+  {% include "vehicle/footer.html" %}
+
+</body>
+
+</html>
